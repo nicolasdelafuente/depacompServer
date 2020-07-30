@@ -2,9 +2,12 @@ import Seguimiento from "../models/Seguimiento";
 
 export async function getSeguimientos(req, res) {
   try {
-    const seguimientos = await Seguimiento.findAll();
+    const seguimientos = await Seguimiento.findAll({
+      order: [["fecha", "ASC"]],
+    });
     res.json({
       data: seguimientos,
+      // Will order by max(age)
     });
   } catch (error) {
     console.log(error);
