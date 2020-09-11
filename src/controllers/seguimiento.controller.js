@@ -15,7 +15,7 @@ export async function getSeguimientos(req, res) {
 }
 
 export async function createSeguimiento(req, res) {
-  const { fecha, name, motivo, estado, orientador, color_estado } = req.body;
+  const { fecha, name, motivo, estado, orientador } = req.body;
 
   try {
     let nuevoSeguimiento = await Seguimiento.create(
@@ -25,17 +25,9 @@ export async function createSeguimiento(req, res) {
         motivo,
         estado,
         orientador,
-        color_estado,
       },
       {
-        fields: [
-          "fecha",
-          "name",
-          "motivo",
-          "estado",
-          "orientador",
-          "color_estado",
-        ],
+        fields: ["fecha", "name", "motivo", "estado", "orientador"],
       }
     );
 
@@ -78,17 +70,10 @@ export async function deleteSeguimiento(req, res) {
 
 export async function updateSeguimiento(req, res) {
   const { id } = req.params;
-  const { fecha, name, motivo, estado, orientador, color_estado } = req.body;
+  const { fecha, name, motivo, estado, orientador } = req.body;
 
   const seguimientos = await Seguimiento.findAll({
-    attributes: [
-      "fecha",
-      "name",
-      "motivo",
-      "estado",
-      "orientador",
-      "color_estado",
-    ],
+    attributes: ["fecha", "name", "motivo", "estado", "orientador"],
     where: { id },
   });
 
@@ -100,7 +85,6 @@ export async function updateSeguimiento(req, res) {
         motivo,
         estado,
         orientador,
-        color_estado,
       });
     });
   }

@@ -10,7 +10,6 @@ const Seguimiento = sequelize.define(
     motivo: { type: Sequelize.TEXT },
     estado: { type: Sequelize.TEXT },
     orientador: { type: Sequelize.TEXT },
-    color_estado: { type: Sequelize.TEXT },
   },
   { timestamps: false }
 );
