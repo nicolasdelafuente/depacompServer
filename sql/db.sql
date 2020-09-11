@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS seguimientos
     name text NOT NULL CHECK (name <> ''),
     motivo text NOT NULL CHECK (name <> ''),
 	estado text NOT NULL CHECK (name <> ''),
-	orientador text NOT NULL CHECK (name <> ''),
+	orientador text NOT NULL CHECK (name <> '')
 );
 
 INSERT INTO seguimientos (fecha, name, motivo, estado, orientador)
