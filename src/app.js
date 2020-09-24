@@ -16,12 +16,14 @@ import seguimientosRoutes from "./routes/seguimientos";
 import tipos_documentosRoutes from "./routes/tipos_documentos";
 import tipos_seguimeintosRoutes from "./routes/tipos_seguimientos";
 
+const cors = require("cors");
+
 //Inicialización
 
 const app = express();
 
 // Middlewares
-
+app.use(cors());
 app.use(morgan("dev)")); //Para ver las peticiones que van llegando.
 app.use(json()); //Para entender el formato .json.
 
