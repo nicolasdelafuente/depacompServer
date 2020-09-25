@@ -1,6 +1,6 @@
 import Sequelize from "sequelize";
 
-export const sequelize = new Sequelize("departamento", "postgres", "root", {
+export const sequelize = new Sequelize("departamento", "postgres", "Adrian1971", {
   host: "localhost",
   dialect: "postgres",
   pool: {
