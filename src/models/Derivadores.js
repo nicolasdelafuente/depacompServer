@@ -1,6 +1,8 @@
 import Sequelize from "sequelize";
 import { sequelize } from "../database/database";
 
+import Seguimientos from "./Seguimientos";
+
 const Derivadores = sequelize.define(
   "derivadores",
   {
@@ -17,5 +19,14 @@ const Derivadores = sequelize.define(
   },
   { timestamps: false }
 );
+
+Derivadores.hasMany(Seguimientos, {
+  foreingKey: "derivador_id",
+  sourceKey: "derivador_id",
+});
+Seguimientos.belongsTo(Derivadores, {
+  foreingKey: "derivador_id",
+  sourceKey: "derivador_id",
+});
 
 export default Derivadores;

@@ -1,6 +1,8 @@
 import Sequelize from "sequelize";
 import { sequelize } from "../database/database";
 
+import Personas from "./Personas";
+
 const Carreras = sequelize.define(
   "carreras",
   {
@@ -20,5 +22,9 @@ const Carreras = sequelize.define(
   },
   { timestamps: false }
 );
+
+//many to many
+Carreras.belongsToMany(Personas, { through: "persona_carrera" });
+Personas.belongsToMany(Carreras, { through: "persona_carrera" });
 
 export default Carreras;

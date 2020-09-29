@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS derivadores CASCADE;
 DROP TABLE IF EXISTS estados CASCADE;
 DROP TABLE IF EXISTS entrevistas CASCADE;
 DROP TABLE IF EXISTS tipos_seguimientos CASCADE;
-DROP TABLE IF EXISTS seguimientos cascade;
+DROP TABLE IF EXISTS seguimientos CASCADE;
 
 truncate table orientadores RESTART identity CASCADE;
 truncate table personas RESTART identity CASCADE;
@@ -58,6 +58,7 @@ CREATE TABLE carreras(
 );
 
 CREATE TABLE personas_carreras(
+   persona_carrera_id INT GENERATED ALWAYS AS IDENTITY,
    persona_id INT not null,
    carrera_id INT not null
 );

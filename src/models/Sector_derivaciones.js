@@ -1,6 +1,8 @@
 import Sequelize from "sequelize";
 import { sequelize } from "../database/database";
 
+import Derivadores from "./Derivadores";
+
 const Sector_derivaciones = sequelize.define(
   "sectorderivaciones",
   {
@@ -14,5 +16,14 @@ const Sector_derivaciones = sequelize.define(
   },
   { timestamps: false }
 );
+
+Sector_derivaciones.hasMany(Derivadores, {
+  foreingKey: "sector_id",
+  sourceKey: "sector_id",
+});
+Derivadores.belongsTo(Sector_derivaciones, {
+  foreingKey: "sector_id",
+  sourceKey: "sector_id",
+});
 
 export default Sector_derivaciones;

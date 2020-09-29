@@ -1,6 +1,8 @@
 import Sequelize from "sequelize";
 import { sequelize } from "../database/database";
 
+import Seguimientos from "./Seguimientos";
+
 const Personas = sequelize.define(
   "personas",
   {
@@ -32,5 +34,14 @@ const Personas = sequelize.define(
   },
   { timestamps: false }
 );
+
+Personas.hasMany(Seguimientos, {
+  foreingKey: "persona_id",
+  sourceKey: "persona_id",
+});
+Seguimientos.belongsTo(Personas, {
+  foreingKey: "persona_id",
+  sourceKey: "persona_id",
+});
 
 export default Personas;

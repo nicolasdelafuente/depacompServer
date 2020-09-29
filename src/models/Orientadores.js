@@ -1,6 +1,8 @@
 import Sequelize from "sequelize";
 import { sequelize } from "../database/database";
 
+import Seguimientos from "./Seguimientos";
+
 const Orientadores = sequelize.define(
   "orientadores",
   {
@@ -20,5 +22,14 @@ const Orientadores = sequelize.define(
   },
   { timestamps: false }
 );
+
+Orientadores.hasMany(Seguimientos, {
+  foreingKey: "orientador_id",
+  sourceKey: "orientador_id",
+});
+Seguimientos.belongsTo(Orientadores, {
+  foreingKey: "orientador_id",
+  sourceKey: "orientador_id",
+});
 
 export default Orientadores;
