@@ -13,4 +13,15 @@ router.get("/", (req, res) => {
   }
 });
 
+// READ /api/entrevistas/:id
+router.get("/:id", (req, res) => {
+  try {
+    Entrevista.findByPk(req.params.id).then((entrevista) => {
+      res.json(entrevista);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;

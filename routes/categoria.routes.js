@@ -13,4 +13,15 @@ router.get("/", (req, res) => {
   }
 });
 
+// READ /api/categorias/:id
+router.get("/:id", (req, res) => {
+  try {
+    Categoria.findByPk(req.params.id).then((categoria) => {
+      res.json(categoria);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;

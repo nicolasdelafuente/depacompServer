@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const sequelize = require("./database/db");
-const Carrera = require("./database/models/Carrera");
 
 const PORT = process.env.PORT || 4000;
 
@@ -20,7 +19,7 @@ app.use(
   "/api/sectores_derivacion",
   require("./routes/sectorDerivacion.routes")
 );
-app.use("/api/seguimeintos", require("./routes/seguimiento.routes"));
+app.use("/api/seguimientos", require("./routes/seguimiento.routes"));
 app.use("/api/tipos_documento", require("./routes/tipoDocumento.routes"));
 app.use("/api/tipos_seguimiento", require("./routes/tipoSeguimiento.routes"));
 

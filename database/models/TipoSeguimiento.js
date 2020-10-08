@@ -17,7 +17,7 @@ TipoSeguimiento.init(
   },
   {
     sequelize,
-    modelName: "Tipos_seguimientos",
+    modelName: "tipos_seguimientos",
     timestamps: false,
   }
 );

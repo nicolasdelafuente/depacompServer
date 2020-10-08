@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../db");
 
-class Seguimeinto extends Model {}
-Seguimeinto.init(
+class Seguimiento extends Model {}
+Seguimiento.init(
   {
     seguimiento_id: {
       type: DataTypes.INTEGER,
@@ -50,4 +50,4 @@ Seguimeinto.init(
   }
 );
 
-module.exports = Seguimeinto;
+module.exports = Seguimiento;

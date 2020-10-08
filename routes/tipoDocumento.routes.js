@@ -13,4 +13,15 @@ router.get("/", (req, res) => {
   }
 });
 
+// READ /api/tipos_documento/:id
+router.get("/:id", (req, res) => {
+  try {
+    TipoDocumento.findByPk(req.params.id).then((tipoDocumento) => {
+      res.json(tipoDocumento);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;

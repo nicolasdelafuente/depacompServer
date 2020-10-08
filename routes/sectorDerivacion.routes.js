@@ -13,4 +13,15 @@ router.get("/", (req, res) => {
   }
 });
 
+// READ /api/sectores_derivacion/:id
+router.get("/:id", (req, res) => {
+  try {
+    SectorDerivacion.findByPk(req.params.id).then((sectorDerivacion) => {
+      res.json(sectorDerivacion);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;
