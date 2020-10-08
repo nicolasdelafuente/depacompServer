@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
 const sequelize = require("./database/db");
+const cors = require("cors");
 require("./database/asociaciones");
 
 const PORT = process.env.PORT || 4000;
 
 //Middleware
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
