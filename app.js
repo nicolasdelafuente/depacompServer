@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const sequelize = require("./database/db");
+require("./database/asociaciones");
 
 const PORT = process.env.PORT || 4000;
 
@@ -25,7 +26,7 @@ app.use("/api/tipos_seguimiento", require("./routes/tipoSeguimiento.routes"));
 
 //Arranque de servidor
 app.listen(PORT, function () {
-  console.log(`La app ha arranado en http://localhost:${PORT}`);
+  console.log(`La app arranca en http://localhost:${PORT}`);
 
   // Conectase a la base de datos
   // Force true: DROP TABLES
