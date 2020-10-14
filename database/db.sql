@@ -1,6 +1,5 @@
-CREATE DATABASE test;
+CREATE DATABASE departameno;
 
-SELECT * FROM pg_database;
 
 --Drops de tablas
 DROP TABLE IF EXISTS orientadores CASCADE;
