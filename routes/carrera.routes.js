@@ -8,8 +8,13 @@ router.get("/", (req, res) => {
     Carrera.findAll().then((carrera) => {
       res.json(carrera);
     });
-  } catch (error) {}
+  } catch (error) {} // res.status(400).json({ message: "Error al obtener la información solicitada"} )
 });
+//    try {
+/* ... acción ... */
+//} catch (err) {
+//handleError(err, req, res)
+//}
 
 // READ /api/carreras/:id
 router.get("/:id", (req, res) => {

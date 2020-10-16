@@ -13,6 +13,7 @@ const TipoSeguimiento = require("./models/TipoSeguimiento");
 Seguimiento.hasOne(Estado, {
   as: "estados",
   foreignKey: "estado_id",
+  sourceKey: "estado_id",
 });
 
 Seguimiento.hasOne(Categoria, {
