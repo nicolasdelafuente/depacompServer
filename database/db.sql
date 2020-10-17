@@ -63,41 +63,41 @@ CREATE TABLE personas_carreras(
 );
 
 CREATE TABLE categorias(
-   categoria_id INT GENERATED ALWAYS AS identity,
+   categoria_id INT GENERATED ALWAYS AS IDENTITY,
    categoria_tipo VARCHAR(255) NOT null unique,
    PRIMARY KEY(categoria_id)
 );
 
 CREATE TABLE orientadores(
-   orientador_id INT GENERATED ALWAYS AS identity,
+   orientador_id INT GENERATED ALWAYS AS IDENTITY,
    orientador_nombre VARCHAR(255) NOT null,
-   orientador_email VARCHAR(100) NOT null UNIQUE,
+   orientador_email VARCHAR(100) NOT null unique,
    orientador_password VARCHAR(255) NOT null,
    PRIMARY KEY(orientador_id)
 );
 
 CREATE TABLE sectorderivaciones(
-   sector_id INT GENERATED ALWAYS AS identity,
+   sector_id INT GENERATED ALWAYS AS IDENTITY,
    sector_nombre VARCHAR(255) NOT null UNIQUE,
    PRIMARY KEY(sector_id)
 );
 
 CREATE TABLE derivadores(
-   derivador_id INT GENERATED ALWAYS AS identity,
+   derivador_id INT GENERATED ALWAYS AS IDENTITY,
    sector_id INT NOT null,
    derivador_nombre VARCHAR(255) NOT null UNIQUE,
    PRIMARY KEY(derivador_id)
 );
 
 CREATE TABLE estados(
-   estado_id INT GENERATED ALWAYS AS identity,
+   estado_id INT GENERATED ALWAYS AS IDENTITY,
    estado_tipo VARCHAR(255) NOT null,
    color VARCHAR(255) NOT null,
    PRIMARY KEY(estado_id)
 );
 
 CREATE TABLE entrevistas(
-   entrevista_id INT GENERATED ALWAYS AS identity,
+   entrevista_id INT GENERATED ALWAYS AS IDENTITY,
    seguimiento_id INT NOT null,
    entrevista_fecha_hora date,
    entrevista_observaciones VARCHAR(255) NOT null,
@@ -106,13 +106,13 @@ CREATE TABLE entrevistas(
 );
 
 CREATE TABLE tipos_seguimientos(
-   tipo_seguimiento_id INT GENERATED ALWAYS AS identity,
+   tipo_seguimiento_id INT GENERATED ALWAYS AS IDENTITY,
    tipo_seguimiento_tipo VARCHAR(255) NOT null,
    PRIMARY KEY(tipo_seguimiento_id)
 );
 
 CREATE TABLE seguimientos(
-   seguimiento_id INT GENERATED ALWAYS AS identity,
+   seguimiento_id INT GENERATED ALWAYS AS IDENTITY,
    estado_id INT NOT null,
    entrevista_id INT,
    categoria_id INT NOT null,
@@ -234,19 +234,19 @@ INSERT INTO personas_carreras (persona_id, carrera_id) VALUES (4, 1);
 
 --Tabla de Seguimientos
 INSERT INTO seguimientos (estado_id, entrevista_id, categoria_id, tipo_seguimiento_id, persona_id, orientador_id, derivador_id, seguimiento_motivo) 
-	VALUES (2, 1, 1, 1, 1, 1, 3, 'Esta preocupado porque no consigue computadora para estudiar');
+	VALUES (1, 3, 1, 1, 1, 1, 3, 'Esta preocupado porque no consigue computadora para estudiar');
 INSERT INTO seguimientos (estado_id, entrevista_id, categoria_id, tipo_seguimiento_id, persona_id, orientador_id, derivador_id, seguimiento_motivo) 
-	VALUES (2, 1, 1, 1, 1, 1, 1, 'No consigue computadora para estudiar');
+	VALUES (2, 1, 2, 1, 1, 1, 1, 'No consigue computadora para estudiar');
 INSERT INTO seguimientos (estado_id, entrevista_id, categoria_id, tipo_seguimiento_id, persona_id, orientador_id, derivador_id, seguimiento_motivo) 
-	VALUES (2, 1, 1, 1, 2, 2, 1, 'No consigue computadora para estudiar');
+	VALUES (3, 2, 3, 1, 2, 2, 1, 'No consigue computadora para estudiar');
 INSERT INTO seguimientos (estado_id, entrevista_id, categoria_id, tipo_seguimiento_id, persona_id, orientador_id, derivador_id, seguimiento_motivo) 
-	VALUES (2, 1, 1, 1, 2, 2, 2, 'No consigue computadora para estudiar');
+	VALUES (4, 4, 4, 1, 2, 2, 2, 'No consigue computadora para estudiar');
 INSERT INTO seguimientos (estado_id, entrevista_id, categoria_id, tipo_seguimiento_id, persona_id, orientador_id, derivador_id, seguimiento_motivo) 
-	VALUES (2, 1, 1, 1, 2, 3, 4, 'No consigue computadora para estudiar');
+	VALUES (5, 7, 5, 1, 2, 3, 4, 'No consigue computadora para estudiar');
 INSERT INTO seguimientos (estado_id, entrevista_id, categoria_id, tipo_seguimiento_id, persona_id, orientador_id, derivador_id, seguimiento_motivo) 
-	VALUES (2, 1, 1, 1, 3, 4, 4, 'No consigue computadora para estudiar');
+	VALUES (6, 1, 6, 1, 3, 4, 4, 'No consigue computadora para estudiar');
 INSERT INTO seguimientos (estado_id, entrevista_id, categoria_id, tipo_seguimiento_id, persona_id, orientador_id, derivador_id, seguimiento_motivo) 
-	VALUES (2, 1, 1, 1, 3, 3, 4, 'No consigue computadora para estudiar');
+	VALUES (7, 1, 3, 1, 3, 3, 4, 'No consigue computadora para estudiar');
 INSERT INTO seguimientos (estado_id, entrevista_id, categoria_id, tipo_seguimiento_id, persona_id, orientador_id, derivador_id, seguimiento_motivo) 
 	VALUES (2, 1, 1, 1, 3, 4, 4, 'No consigue computadora para estudiar');
 

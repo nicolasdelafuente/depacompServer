@@ -15,9 +15,14 @@ router.get("/", (req, res) => {
     Seguimiento.findAll({
       include: [
         {
-          model: Estado,
-          as: "estados",
-          attributes: ["estado_tipo"],
+          model: Categoria,
+          as: "categorias",
+          attributes: ["categoria_tipo"],
+        },
+        {
+          model: Derivador,
+          as: "derivadores",
+          attributes: ["derivador_nombre"],
         },
         {
           model: Entrevista,
@@ -25,14 +30,14 @@ router.get("/", (req, res) => {
           attributes: ["entrevista_observaciones", "entrevista_acciones"],
         },
         {
-          model: Categoria,
-          as: "categorias",
-          attributes: ["categoria_tipo"],
+          model: Estado,
+          as: "estados",
+          attributes: ["estado_tipo", "color"],
         },
         {
-          model: TipoSeguimiento,
-          as: "tiposSeguimiento",
-          attributes: ["tipo_seguimiento_tipo"],
+          model: Orientador,
+          as: "orientadores",
+          attributes: ["orientador_nombre", "orientador_email"],
         },
         {
           model: Persona,
@@ -45,14 +50,9 @@ router.get("/", (req, res) => {
           ],
         },
         {
-          model: Orientador,
-          as: "orientadores",
-          attributes: ["orientador_nombre", "orientador_email"],
-        },
-        {
-          model: Derivador,
-          as: "derivadores",
-          attributes: ["derivador_nombre"],
+          model: TipoSeguimiento,
+          as: "tiposSeguimiento",
+          attributes: ["tipo_seguimiento_tipo"],
         },
       ],
     }).then((seguimiento) => {

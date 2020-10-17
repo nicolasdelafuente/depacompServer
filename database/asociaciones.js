@@ -19,26 +19,31 @@ Seguimiento.hasOne(Estado, {
 Seguimiento.hasOne(Categoria, {
   as: "categorias",
   foreignKey: "categoria_id",
+  sourceKey: "categoria_id",
 });
 
 Seguimiento.hasOne(TipoSeguimiento, {
   as: "tiposSeguimiento",
   foreignKey: "tipo_seguimiento_id",
+  sourceKey: "tipo_seguimiento_id",
 });
 
 Seguimiento.hasOne(Persona, {
   as: "personas",
   foreignKey: "persona_id",
+  sourceKey: "persona_id",
 });
 
 Seguimiento.hasOne(Orientador, {
   as: "orientadores",
   foreignKey: "orientador_id",
+  sourceKey: "orientador_id",
 });
 
 Seguimiento.hasOne(Derivador, {
   as: "derivadores",
   foreignKey: "derivador_id",
+  sourceKey: "derivador_id",
 });
 
 //1 a N
@@ -46,6 +51,7 @@ Seguimiento.hasOne(Derivador, {
 Seguimiento.hasMany(Entrevista, {
   as: "entrevistas",
   foreignKey: "entrevista_id",
+  sourceKey: "entrevista_id",
 });
 Entrevista.belongsTo(Seguimiento);
 
