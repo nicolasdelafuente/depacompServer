@@ -1,4 +1,5 @@
 @localhost = http://localhost:4000/api
+@GooglePostgres = http://35.247.230.28:4000/api
 ### Obtener todos los seguimientos.
 GET {{localhost}}/seguimientos
 
@@ -21,4 +22,10 @@ Content-Type: application/json
 
 ### Eliminar seguimiento
 DELETE  {{localhost}}/seguimientos/8
+
+
+
+##Google
+
+GET {{GooglePostgres}}/seguimientos
 
