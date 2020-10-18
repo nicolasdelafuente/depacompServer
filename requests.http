@@ -1,0 +1,24 @@
+@localhost = http://localhost:4000/api
+### Obtener todos los seguimientos.
+GET {{localhost}}/seguimientos
+
+### Obtener 1 seguimeinto.
+GET {{localhost}}/seguimientos/1
+
+### Cargar un seguimiento.
+POST {{localhost}}/seguimientos/post
+Content-Type: application/json
+{
+  "estado_id": 4,
+  "entrevista_id": 3,
+  "categoria_id": 1,
+  "tipo_seguimiento_id": 1,
+  "persona_id": 1,
+  "orientador_id": 1,
+  "derivador_id": 3,
+  "seguimiento_motivo": "Viene desde el POST"
+}
+
+### Eliminar seguimiento
+DELETE  {{localhost}}/seguimientos/8
+
