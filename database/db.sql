@@ -1,4 +1,4 @@
-CREATE DATABASE departameno;
+CREATE DATABASE departamento;
 
 
 --Drops de tablas
