@@ -246,7 +246,7 @@ INSERT INTO seguimientos (estado_id, entrevista_id, categoria_id, tipo_seguimien
 INSERT INTO seguimientos (estado_id, entrevista_id, categoria_id, tipo_seguimiento_id, persona_id, orientador_id, derivador_id, seguimiento_motivo) 
 	VALUES (6, 1, 6, 1, 3, 4, 4, 'No consigue computadora para estudiar');
 INSERT INTO seguimientos (estado_id, entrevista_id, categoria_id, tipo_seguimiento_id, persona_id, orientador_id, derivador_id, seguimiento_motivo) 
-	VALUES (7, 1, 3, 1, 3, 3, 4, 'No consigue computadora para estudiar');
+	VALUES (7, 5, 3, 1, 3, 3, 4, 'No consigue computadora para estudiar');
 INSERT INTO seguimientos (estado_id, entrevista_id, categoria_id, tipo_seguimiento_id, persona_id, orientador_id, derivador_id, seguimiento_motivo) 
 	VALUES (2, 1, 1, 1, 3, 4, 4, 'No consigue computadora para estudiar');
 
