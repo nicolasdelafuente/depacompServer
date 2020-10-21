@@ -53,7 +53,10 @@ Seguimiento.hasMany(Entrevista, {
   foreignKey: "entrevista_id",
   sourceKey: "entrevista_id",
 });
-Entrevista.belongsTo(Seguimiento);
+Entrevista.belongsTo(Seguimiento, {
+  foreignKey: "entrevista_id",
+  as: "seguimientos",
+});
 
 // un seguimiento va a tener un estado.
 
