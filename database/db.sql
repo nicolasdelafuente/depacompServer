@@ -99,7 +99,7 @@ CREATE TABLE estados(
 CREATE TABLE entrevistas(
    entrevista_id INT GENERATED ALWAYS AS IDENTITY,
    seguimiento_id INT NOT null,
-   entrevista_fecha_hora date,
+   entrevista_fecha_hora TIMESTAMP,
    entrevista_observaciones VARCHAR(255) NOT null,
    entrevista_acciones VARCHAR(255) NOT null,
    PRIMARY KEY(entrevista_id)
